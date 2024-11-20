@@ -43,6 +43,28 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <style>
+    .image-row {
+            display: flex;
+            flex-wrap: wrap; /* Ensures responsiveness */
+            justify-content: space-around;
+            margin: 5px;
+        }
+
+        .image-container {
+            text-align: center;
+            flex: 1 1 15%; /* Adjusts the width of each image container */
+            margin: 10px;
+            max-width: 18%;
+        }
+
+        .image-caption {
+            margin-top: 0px;
+            font-size: 12px;
+            color: #555;
+        }
+  </style>
 </head>
 <body>
 
@@ -61,7 +83,7 @@
     
                   </div>
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block">Institute of Automation, Chinese Academy of Sciences</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -119,32 +141,16 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
+<!-- Paper Overview -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            One-shot prompting has clear limitations—it's often difficult for users to fully express their needs in a single attempt, and generating an image that satisfies them on the first try can be equally challenging. This makes it natural to consider creating an interactive multi-turn editing framework. Such a framework would let users refine their requests step-by-step, gradually arriving at a result they're happy with.
+            This system would also allow users to base their edits on previously generated images. The resulting image sequence should retain a consistent visual style and enable fine-grained adjustments at each step, helping users refine the image in a specific direction. 
           </p>
         </div>
       </div>
@@ -154,130 +160,84 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- teaser image -->
 <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <h2 class="title is-3">Multi-Turn Edit Pipeline</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <img src="static/images/pipeline.png" alt="Pipeline" >
           </div>
         </div>
+        <p>
+          A potential project could involve storing image embeddings at each generation round. When initiating a new editing round, historical embeddings can be merged, with higher weight assigned to the user-selected base image, followed by implementing edits guided by the new text prompt.
+          Further experiments might include editing the initial noise or merging attention maps. Careful consideration of merging strategies will be essential to achieve accurate and reliable information integration.
+        </p>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+<!-- End teaser image -->
 
 
 
-
-
-
-<!-- Paper poster 
+<!-- demo video-->
 <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    <h2 class="title is-3">Display Demo</h2>
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/demo.mp4"
+        type="video/mp4">
+      </video>
+      <p>
+        In the demo, users start by uploading one or more images. They select a base image and enter a text prompt to begin editing. After each editing round, users can choose a previously generated image from the history as the base image to continue the editing process.
+      </p>
     </div>
-  </section>  -->
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
+  </div>
 </section>
-<!--End BibTex citation -->
+<!-- End demo video -->
+
+
+
+<!-- More Results -->
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    <h2 class="title is-3">More Results</h2>
+    <div class="image-row">
+      <div class="image-container">
+          <img src="static/images/corgi/origin image.png" alt="Image 1">
+          <div class="image-caption">source</div>
+      </div>
+      <div class="image-container">
+          <img src="static/images/corgi/a running dog.png" alt="Image 2">
+          <div class="image-caption">a running dog</div>
+      </div>
+      <div class="image-container">
+          <img src="static/images/corgi/a sitting dog.png" alt="Image 3">
+          <div class="image-caption">a sitting dog</div>
+      </div>
+      <div class="image-container">
+          <img src="static/images/corgi/a running cat.png" alt="Image 4">
+          <div class="image-caption">a running cat</div>
+      </div>
+      <div class="image-container">
+          <img src="static/images/corgi/a dog swimming in the sea.png" alt="Image 5">
+          <div class="image-caption">a dog swimming in the sea</div>
+      </div>
+  </div>
+    </div>
+  </div>
+</section>
+<!-- End demo video -->
+
+
+
+
 
 
   <footer class="footer">
