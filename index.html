@@ -180,13 +180,27 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <img src="static/images/pipeline.png" alt="Pipeline" >
-          </div>
         </div>
+      </div>
         <p>
           A potential project could involve storing image embeddings at each generation round. When initiating a new editing round, historical embeddings can be merged, with higher weight assigned to the user-selected base image, followed by implementing edits guided by the new text prompt.
           Further experiments might include editing the initial noise or merging attention maps. Careful consideration of merging strategies will be essential to achieve accurate and reliable information integration.
         </p>
-      </div>
+      
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <img src="static/images/flow_matching.png" alt="Pipeline" >
+          </div>
+        </div>
+          <p>
+            The ability to accurately and efficiently invert generative models is essential 
+            for achieving precise semantic image editing. Maintaining the original distribution 
+            becomes increasingly challenging when inverting images multiple times. 
+            Rectified flow inversion offers a more precise and straightforward approach to mapping images 
+            back to the latent space. Exploring the application of flow matching techniques 
+            for multi-turn image editing is a promising direction for addressing this challenge.
+          </p>
+      
     </div>
   </div>
 </section>
